@@ -2,6 +2,7 @@ package com.sdau.personal.dao;
 
 import java.util.List;
 
+import com.sdau.personal.pojo.EmpCountVO;
 import com.sdau.personal.pojo.Employee;
 
 public interface IEmployeeDao {
@@ -18,4 +19,6 @@ public interface IEmployeeDao {
     public Employee selectById(Integer id);
 
     public void update(Employee employee);
+
+    List<EmpCountVO> selectEmpCount();
 }

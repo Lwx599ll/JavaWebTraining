@@ -1,8 +1,10 @@
 package com.sdau.personal.servlet;
 
+import com.sdau.personal.pojo.EmpCountVO;
 import com.sdau.personal.pojo.Employee;
 import com.sdau.personal.service.IEmployeeService;
 import com.sdau.personal.service.impl.EmployeeServiceImpl;
+import com.sdau.personal.util.JDBCUtil;
 import com.sdau.personal.util.JSONResult;
 import com.sdau.personal.util.JSONUtil;
 import com.sdau.personal.util.LayUITableResult;
@@ -64,10 +66,19 @@ public class EmployeeServlet extends HttpServlet{
             case "update":
                 update(req, resp);
                 break;
+            case "selectEmpCount":
+                selectEmpCount(req,resp);
+                break;
             default:
                 break;
         }
 
+    }
+
+    private void selectEmpCount(HttpServletRequest req, HttpServletResponse resp) {
+        List<EmpCountVO> list = employeeService.selectEmpCount();
+
+        JSONUtil.obj2Json(JSONResult.ok(list), resp);
     }
 
 
@@ -150,5 +161,8 @@ public class EmployeeServlet extends HttpServlet{
         // 转发到employee_list.jsp展示数据
         req.getRequestDispatcher("/employee_list.jsp").forward(req, resp);
     }
+
+
+
 
 }

@@ -1,6 +1,7 @@
 package com.sdau.personal.dao.impl;
 
 import com.sdau.personal.dao.IEmployeeDao;
+import com.sdau.personal.pojo.EmpCountVO;
 import com.sdau.personal.pojo.Employee;
 import com.sdau.personal.util.JDBCUtil;
 
@@ -208,6 +209,34 @@ public class EmployeeDaoImpl implements IEmployeeDao{
         } finally {
             JDBCUtil.close(connection, preparedStatement, null);
         }
+    }
+
+    @Override
+    public List<EmpCountVO> selectEmpCount() {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List<EmpCountVO> list = new ArrayList<EmpCountVO>();
+        try {
+            connection = JDBCUtil.getConnection();
+            String sql = "SELECT gender as 'name',basic+jiangjin+baoxiao as 'value'\n" +
+                    "FROM employee\n" +
+                    "GROUP BY gender";
+            preparedStatement = connection.prepareStatement(sql);
+            System.out.println(preparedStatement);
+            resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()) {
+                String name = resultSet.getString("name");
+                int value  = resultSet.getInt("value");
+                EmpCountVO empCountVO = new EmpCountVO(name, value);
+                list.add(empCountVO);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtil.close(connection, preparedStatement, resultSet);
+        }
+        return list;
     }
 
 }

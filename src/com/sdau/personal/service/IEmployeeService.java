@@ -2,6 +2,7 @@ package com.sdau.personal.service;
 
 import java.util.List;
 
+import com.sdau.personal.pojo.EmpCountVO;
 import com.sdau.personal.pojo.Employee;
 import com.sdau.personal.util.LayUITableResult;
 
@@ -14,4 +15,6 @@ public interface IEmployeeService {
     public void deleteAll(String[] array);
     public Employee selectById(Integer id);
     public void update(Employee employee);
+
+    List<EmpCountVO> selectEmpCount();
 }

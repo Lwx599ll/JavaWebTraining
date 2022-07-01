@@ -19,6 +19,7 @@
 								用户${user.name}
 <%-- 				        	[${user.name}] --%>
 				    </a>
+
 					<dl class="layui-nav-child">
 						<dd>
 							<a href="javascript:openUser()">基本资料</a>
@@ -51,12 +52,12 @@
 							<dd>
 								<a href="javascript:;" 
 								data-url="${pageContext.request.contextPath}/employee_list.jsp"
-								class="site-demo-active">员工管理</a>
+								class="site-demo-active">财务管理</a>
 							</dd>
 							<dd>
 								<a href="javascript:;"
-								   data-url="/user/getUserListPage"
-								   class="site-demo-active">用户管理</a>
+								   data-url="${path}/person.jsp"
+								   class="site-demo-active">个人信息</a>
 							</dd>
 							<c:if test="${user.type==0}">
 								<dd>

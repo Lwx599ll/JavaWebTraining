@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.sdau.personal.dao.IEmployeeDao;
 import com.sdau.personal.dao.impl.EmployeeDaoImpl;
+import com.sdau.personal.pojo.EmpCountVO;
 import com.sdau.personal.pojo.Employee;
 import com.sdau.personal.service.IEmployeeService;
 import com.sdau.personal.util.LayUITableResult;
@@ -55,5 +56,10 @@ public class EmployeeServiceImpl implements IEmployeeService{
     @Override
     public void update(Employee employee) {
         employeeDao.update(employee);
+    }
+
+    @Override
+    public List<EmpCountVO> selectEmpCount() {
+        return employeeDao.selectEmpCount();
     }
 }

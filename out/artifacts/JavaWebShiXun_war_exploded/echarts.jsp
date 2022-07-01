@@ -18,7 +18,7 @@
 			$(function() {
 				// 基于准备好的dom，初始化echarts实例
 				var myChart = echarts.init(document.getElementById('main1'));
-				$.post('${path}/dept?method=selectDeptEmpCount', function(
+				$.post('${path}/employee?method=selectEmpCount', function(
 						jsonResult) {
 					console.log(jsonResult);
 					var list = jsonResult.data;
@@ -32,18 +32,18 @@
 					// 指定图表的配置项和数据
 					var option = {
 						title : {
-							text : '部门人数统计'
+							text : '男女工资统计'
 						},
 						tooltip : {},
 						legend : {
-							data : [ '销量' ]
+							data : [ '总工资' ]
 						},
 						xAxis : {
 							data : xArray
 						},
 						yAxis : {},
 						series : [ {
-							name : '销量',
+							name : '总工资',
 							type : 'bar',
 							data : yArray
 						} ]
@@ -62,14 +62,14 @@
 			$(function() {
 				// 基于准备好的dom，初始化echarts实例
 				var myChart = echarts.init(document.getElementById('main2'));
-				$.post('${path}/dept?method=selectDeptEmpCount', function(
+				$.post('${path}/employee?method=selectEmpCount', function(
 						jsonResult) {
 					console.log(jsonResult);
 					var list = jsonResult.data;
 					// 指定图表的配置项和数据
 					option = {
 						title : {
-							text : '部门人数分布',
+							text : '男女工资统计',
 							subtext : 'Fake Data',
 							left : 'center'
 						},
