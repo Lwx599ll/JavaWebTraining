@@ -18,7 +18,7 @@ public class JDBCUtil {
 	}
 	
 	public static Connection getConnection() throws SQLException {
-		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/personal?useUnicode=true&characterEncoding=UTF-8", "root", "1234");
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/salary?useUnicode=true&characterEncoding=UTF-8", "root", "1234");
 		return connection;
 	}
 

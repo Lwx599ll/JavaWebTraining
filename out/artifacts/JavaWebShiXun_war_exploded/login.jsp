@@ -31,7 +31,7 @@
             /*background-image: linear-gradient(to right, #fbc2eb, #a6c1ee); 设置渐变色 */
             padding: 0;
             margin: 0;
-            background: url("${path}/static/img/1.jpg") no-repeat;
+            background: url("${path}/static/img/2.jpg") no-repeat;
             background-size: 100% 100%;
         }
 

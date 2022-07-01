@@ -10,64 +10,64 @@ import com.sdau.personal.util.LayUITableResult;
 import com.sdau.personal.util.MD5Util;
 
 public class UserServiceImpl implements IUserService {
-	
-	IUserDao userDao = new UserDaoImpl();
-	@Override
-	public List<User> selectAll() {
-		// TODO Auto-generated method stub
-		return userDao.selectAll();
-	}
 
-	@Override
-	public void deleteById(Integer id) {
-		// TODO Auto-generated method stub
-		userDao.deleteById(id);
-	}
+    IUserDao userDao = new UserDaoImpl();
+    @Override
+    public List<User> selectAll() {
+        // TODO Auto-generated method stub
+        return userDao.selectAll();
+    }
 
-	@Override
-	public LayUITableResult selectByPage(Integer page, Integer limit) {
-		// TODO Auto-generated method stub
-		int offset = (page-1)*limit;
-		List<User> list  = userDao.selectByPage(offset,limit);
-		long totalCount = userDao.selectTotalCount();
-		return LayUITableResult.ok(list, totalCount);
-	}
+    @Override
+    public void deleteById(Integer id) {
+        // TODO Auto-generated method stub
+        userDao.deleteById(id);
+    }
 
-	@Override
-	public void add(User user) {
-		// TODO Auto-generated method stub
-		user.setPassword(MD5Util.MD5Encode(user.getPassword() + MD5Util.MD5_SALT));
-		userDao.add(user);
-		
-	}
+    @Override
+    public LayUITableResult selectByPage(Integer page, Integer limit) {
+        // TODO Auto-generated method stub
+        int offset = (page-1)*limit;
+        List<User> list  = userDao.selectByPage(offset,limit);
+        long totalCount = userDao.selectTotalCount();
+        return LayUITableResult.ok(list, totalCount);
+    }
 
-	@Override
-	public void deleteAll(String[] array) {
-		// TODO Auto-generated method stub
-		for (String id : array) {
-			userDao.deleteById(Integer.parseInt(id));
-		}
-	}
+    @Override
+    public void add(User user) {
+        // TODO Auto-generated method stub
+        user.setPassword(MD5Util.MD5Encode(user.getPassword() + MD5Util.MD5_SALT));
+        userDao.add(user);
 
-	@Override
-	public void update(User user) {
-		// TODO Auto-generated method stub
-		userDao.update(user);
-	}
+    }
 
-	@Override
-	public User selectById(Integer id) {
-		
-		return userDao.selectById(id);
-	}
+    @Override
+    public void deleteAll(String[] array) {
+        // TODO Auto-generated method stub
+        for (String id : array) {
+            userDao.deleteById(Integer.parseInt(id));
+        }
+    }
 
-	@Override
-	public User login(String name, String password) {
-		// TODO Auto-generated method stub
-		//return userDao.login(name,password);
-		return userDao.login(name, MD5Util.MD5Encode(password));
-	}
-	
-	
+    @Override
+    public void update(User user) {
+        // TODO Auto-generated method stub
+        userDao.update(user);
+    }
+
+    @Override
+    public User selectById(Integer id) {
+
+        return userDao.selectById(id);
+    }
+
+    @Override
+    public User login(String name, String password) {
+        // TODO Auto-generated method stub
+        //return userDao.login(name,password);
+        return userDao.login(name, MD5Util.MD5Encode(password + MD5Util.MD5_SALT));
+    }
+
+
 
 }

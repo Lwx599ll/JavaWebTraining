@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../header.jsp"%>
+<%@ include file="./header.jsp"%>
 </head>
 <body>
 	<!-- 为 ECharts 准备一个定义了宽高的 DOM -->

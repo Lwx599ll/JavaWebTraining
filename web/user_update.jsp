@@ -46,6 +46,24 @@
 	      </c:if>
 	    </div>
 	  </div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">管理员类型</label>
+			<div class="layui-input-block">
+				<c:if test='${user.type==0}'>
+					<input type="radio" name="type" value="0" title="超级管理员" checked="">
+				</c:if>
+				<c:if test='${user.type!=0}'>
+					<input type="radio" name="type" value="0" title="超级管理员">
+				</c:if>
+
+				<c:if test='${user.type==1}'>
+					<input type="radio" name="type" value="1" title="普通管理员" checked="">
+				</c:if>
+				<c:if test='${user.type!=1}'>
+					<input type="radio" name="type" value="1" title="普通管理员">
+				</c:if>
+			</div>
+		</div>
 	  <div class="layui-form-item">
 	    <div class="layui-input-block">
 	      <button type="button" class="layui-btn" onclick="submitForm()">修改</button>

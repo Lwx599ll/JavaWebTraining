@@ -9,14 +9,14 @@
 <body class="layui-layout-body">
 	<div class="layui-layout layui-layout-admin">
 		<div class="layui-header">
-			<div class="layui-logo">JAVA-0000</div>
+			<div class="layui-logo">工资管理系统</div>
 			<ul class="layui-nav layui-layout-left">   </ul>
 			<ul class="layui-nav layui-layout-right">
 				<li class="layui-nav-item">
 				    <a href="javascript:;"> 
 <%-- 				        <img src="<%=path%>/img/fei.png" --%>
 <!-- 				        class="layui-nav-img"/> -->
-				        	用户
+								用户${user.name}
 <%-- 				        	[${user.name}] --%>
 				    </a>
 					<dl class="layui-nav-child">
@@ -58,11 +58,13 @@
 								   data-url="/user/getUserListPage"
 								   class="site-demo-active">用户管理</a>
 							</dd>
-							<dd>
-								<a href="javascript:;"
-								   data-url="${path}/echarts.jsp"
-								   class="site-demo-active">统计图表</a>
-							</dd>
+							<c:if test="${user.type==0}">
+								<dd>
+									<a href="javascript:;"
+									   data-url="${path}/echarts.jsp"
+									   class="site-demo-active">统计图表</a>
+								</dd>
+							</c:if>
 						</dl>
 					</li>
 					<li class="layui-nav-item">

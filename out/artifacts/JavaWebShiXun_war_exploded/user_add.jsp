@@ -34,6 +34,14 @@
       	  <input type="radio" name="gender" value="女" title="女">
 	    </div>
 	  </div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">管理员类型</label>
+			<div class="layui-input-block">
+				<input type="radio" name="type" value="0" title="管理员" checked="">
+				<input type="radio" name="type" value="1" title="财务管理人员">
+				<input type="radio" name="type" value="2" title="普通员工">
+			</div>
+		</div>
 	  <div class="layui-form-item">
 	    <div class="layui-input-block">
 	      <button type="button" class="layui-btn" onclick="submitForm()">添加</button>
