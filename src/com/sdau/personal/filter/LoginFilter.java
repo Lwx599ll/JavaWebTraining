@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 import com.sdau.personal.pojo.User;
 
 // /*代表拦截所有
-//@WebFilter(filterName = "login", urlPatterns = "/*")
+@WebFilter(filterName = "login", urlPatterns = "/*")
 public class LoginFilter implements Filter{
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

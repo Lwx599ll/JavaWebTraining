@@ -126,7 +126,7 @@
                 if (jsonResult.ok) {
                     // 弹出成功消息，跳转到首页
                     // localhost:8080/
-                    mylayer.okUrl(jsonResult.msg, '${path}/index.jsp');
+                    mylayer.okUrl(jsonResult.msg,'${path}/index.jsp')
                 } else {
                     mylayer.errorMsg(jsonResult.msg);
                 }

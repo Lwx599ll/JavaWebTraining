@@ -11,15 +11,20 @@
 <table class="layui-hide" id="test" lay-filter="test"></table>
 
 <script type="text/html" id="barDemo">
+	<c:if test="${user.type<=1}">
 	<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
 	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+	</c:if>
 </script>
 
 <script type="text/html" id="toolbarDemo">
+	<c:if test="${user.type<=1}">
 	<div class="layui-btn-container">
 		<button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
 		<button class="layui-btn layui-btn-sm" lay-event="deleteAll">批量删除</button>
+
 	</div>
+	</c:if>
 </script>
 
 <script>

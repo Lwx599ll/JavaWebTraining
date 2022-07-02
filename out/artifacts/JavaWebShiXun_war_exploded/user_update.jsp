@@ -50,17 +50,23 @@
 			<label class="layui-form-label">管理员类型</label>
 			<div class="layui-input-block">
 				<c:if test='${user.type==0}'>
-					<input type="radio" name="type" value="0" title="超级管理员" checked="">
+					<input type="radio" name="type" value="0" title="管理员" checked="">
 				</c:if>
 				<c:if test='${user.type!=0}'>
-					<input type="radio" name="type" value="0" title="超级管理员">
+					<input type="radio" name="type" value="0" title="管理员">
 				</c:if>
 
 				<c:if test='${user.type==1}'>
-					<input type="radio" name="type" value="1" title="普通管理员" checked="">
+					<input type="radio" name="type" value="1" title="财务管理员" checked="">
 				</c:if>
 				<c:if test='${user.type!=1}'>
-					<input type="radio" name="type" value="1" title="普通管理员">
+					<input type="radio" name="type" value="1" title="财务管理员">
+				</c:if>
+				<c:if test='${user.type==2}'>
+					<input type="radio" name="type" value="2" title="普通员工" checked="">
+				</c:if>
+				<c:if test='${user.type!=2}'>
+					<input type="radio" name="type" value="2" title="普通员工">
 				</c:if>
 			</div>
 		</div>

@@ -219,7 +219,7 @@ public class EmployeeDaoImpl implements IEmployeeDao{
         List<EmpCountVO> list = new ArrayList<EmpCountVO>();
         try {
             connection = JDBCUtil.getConnection();
-            String sql = "SELECT gender as 'name',basic+jiangjin+baoxiao as 'value'\n" +
+            String sql = "SELECT gender as 'name',sum(basic+jiangjin+baoxiao) as 'value'\n" +
                     "FROM employee\n" +
                     "GROUP BY gender";
             preparedStatement = connection.prepareStatement(sql);

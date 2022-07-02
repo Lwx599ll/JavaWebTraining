@@ -28,9 +28,11 @@
 
 <script type="text/html" id="typeTpl">
 	{{#   if(d.type==0) {       	  }}
-	超级管理员
+	管理员
 	{{#   } else if(d.type==1) {   }}
-	普通管理员
+	财务管理员
+	{{#   } else if(d.type==2) {   }}
+	普通员工
 	{{#   }   					  }}
 </script>
 
